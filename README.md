@@ -1,2 +1,2 @@
-# Agenda-de-contatos
-Agenda de contatos feito em aula 
+# Exercícios Java
+Exercícios feito em aula 
