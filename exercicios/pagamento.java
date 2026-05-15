@@ -23,20 +23,20 @@ public class pagamento {
 
         long diferenca = ChronoUnit.DAYS.between(dataPrevista, dataEfetiva);
 
-        System.out.println("Data prevista: " + dataPrevista.format(formato));
+        System.out.println("\nData prevista: " + dataPrevista.format(formato));
         System.out.println("Data Pagamento: " + dataEfetiva.format(formato));
 
-        if(diferenca < 0){
+        if(diferenca > 0){
             double juros = valor * 0.2;
             valor += juros;
-            System.out.println("Pagamento em atraso");
-            System.out.println("Dias de atraso: " + diferenca);
-            System.out.println("Juros: R$" + juros);
-            System.out.println("Valor final: " + valor);
+            System.out.printf("Pagamento em atraso\n");
+            System.out.printf("Dias de atraso: \n", diferenca);
+            System.out.printf("Juros: R$ %.2f\n", juros);
+            System.out.printf("Valor final: R$%.2f", valor);
         }
         else{
-            System.out.println("Pagamento realizado no prazo.");
-            System.out.println("Valor: " + valor);
+            System.out.printf("Pagamento realizado no prazo.\n");
+            System.out.printf("Valor: R$ %.2f", valor);
         }
         scanner.close();
     }
