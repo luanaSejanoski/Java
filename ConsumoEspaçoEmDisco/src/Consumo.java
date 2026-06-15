@@ -66,7 +66,7 @@ class Consumo{
                     contador++;
                 }
 
-                double media = total / (contador -1);
+                double media = total / lista.size();
 
                 System.out.println("-------------------------------------------------------------------");
 
