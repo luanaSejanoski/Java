@@ -7,13 +7,10 @@ import java.util.Scanner;
 class Consumo{
     public static void main(String[] args) throws Exception {
  
-        /* Scanner para ler dados digitados pelo usuário */
-        Scanner scanner = new Scanner(System.in);
- 
-        /* Lista que armazenará os contatos em memória */
+        /* Lista que armazenará os usuarios em memória */
         ArrayList<RegistroUsuario> lista = new ArrayList<>();
  
-        /* Representa o arquivo contatos.txt */
+        /* Representa o arquivo consumo.txt */
         File arquivo = new File("ConsumoEspaçoEmDisco/consumo.txt");
  
         /* Verifica se o arquivo existe */
@@ -35,14 +32,12 @@ class Consumo{
                 String usuario = partes[0];
                 String espacoDisco = partes[1];
  
-                /* Cria um objeto Contato e adiciona ao ArrayList */
+                /* Cria um objeto RegistroUsuario e adiciona ao ArrayList */
                 lista.add(new RegistroUsuario(usuario, Double.parseDouble(espacoDisco)));
             }
  
             /* Fecha o leitor do arquivo */
             leitor.close();
-
-            double usadoMb;
    
         }
             double total = 0;
@@ -52,7 +47,7 @@ class Consumo{
             }
                
                 lista.sort(Comparator.comparing(RegistroUsuario :: getUsuario));
-                 /* Mostra os dados do contato */
+                 /* Mostra os dados do Registro do usuario */
                 System.out.printf("\n%-5s  %-24s  %-19s  %-10s\n", "Nr.", "Usuario", "Espaço utilizado", "% de uso");
                 System.out.println("-------------------------------------------------------------------");
                 
@@ -77,10 +72,7 @@ class Consumo{
 
                 System.out.printf("Espaço total ocupado: %.2f MB\n", total);
                 System.out.printf("Espaço médio ocupado: %.2f MB", media);
-                
- 
-        /* Fecha o scanner do teclado */
-        scanner.close();
+
     }
 }
 
